@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables (NEVER push these - contain API keys!)
+server/.env
+.env
+*.env
+
+# Database (contains user data - do not push)
+server/db.json
+
+# Build output
+client/dist/
+client/.vite/
+
+# Logs & temp files
+*.log
+npm-debug.log*
+server/test_out.txt
+error.txt
+error_utf8.txt
+test_output.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
