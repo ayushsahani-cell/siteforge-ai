@@ -138,7 +138,7 @@ export default function Landing() {
 
   const [prompt, setPrompt] = useState('');
   const [loading, setLoading] = useState(false);
-  const { token, login } = useAuthStore();
+  const { token } = useAuthStore();
   const navigate = useNavigate();
 
   const handleGenerate = async (e) => {
@@ -159,7 +159,7 @@ export default function Landing() {
         siteName,
       });
       navigate(`/editor/${projRes.data.id}`);
-    } catch (err) {
+    } catch {
       toast.error('Failed to generate. Please try again.');
     } finally {
       setLoading(false);
@@ -343,7 +343,7 @@ export default function Landing() {
           <h2 style={{ fontSize: '2.75rem', fontWeight: 800, letterSpacing: '-0.02em' }}>From Idea to Live Site in Minutes</h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1.5rem' }}>
-          {STEPS.map((s, i) => (
+          {STEPS.map((s) => (
             <div key={s.n} style={{ textAlign: 'center', padding: '2rem 1.5rem' }}>
               <div style={{ width: 56, height: 56, background: 'linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2))', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem', fontSize: '1.25rem', fontWeight: 900, color: '#a78bfa' }}>
                 {s.n}
