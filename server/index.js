@@ -37,4 +37,4 @@ app.get('/preview/:id/:file', (req, res) => {
   res.send(project.files[file]);
 });
 
-app.listen(PORT, '127.0.0.1', () => console.log(`✅ AI Website Builder API running on http://127.0.0.1:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`✅ AI Website Builder API running on port ${PORT}`));
